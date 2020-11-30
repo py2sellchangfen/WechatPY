@@ -25,7 +25,7 @@ if __name__ == '__main__':
         lasturl = ''
         if chapter > prechapter:
             t = soup.find_all('li')
-            print(t)
+            # print(t)
             for i in range(len(t)):
                 if str(prechapter + 1) in t[i].text:
                     lasturl = 'http://m.78zw.com{}'.format(t[i].a['href'])
