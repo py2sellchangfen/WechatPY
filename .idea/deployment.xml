@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="h@192.168.244.129:22 password">
+    <serverData>
+      <paths name="h@192.168.244.129:22 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/usr/project/WechatPY" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
