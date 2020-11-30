@@ -21,7 +21,7 @@ if __name__ == '__main__':
     # print(chapter)
     with open(propath+"/log/xiaoshuo.txt", "r+") as fp:
         prechapter = int(fp.read())
-        print(prechapter)
+        # print(prechapter)
         lasturl = ''
         if chapter > prechapter:
             t = soup.find_all('li')
