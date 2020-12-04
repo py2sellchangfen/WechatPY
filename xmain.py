@@ -15,7 +15,7 @@ if __name__ == '__main__':
     res.encoding = 'utf-8'
     page_text = res.text.replace('<span>','').replace('</span>','')
     soup = BeautifulSoup(page_text, 'lxml')
-    chapter = soup.select('body > div.cover > div.block > div.block_txt2 > p > a')[2].contents
+    chapter = soup.find(attrs={"property": "og:novel:latest_chapter_name"})['content']
     chapter = int(chapter[0].replace('第','').replace('章',''))
     with open(propath+"/log/xiaoshuo.txt", "r+") as fp:
         prechapter = int(fp.read())
@@ -26,6 +26,4 @@ if __name__ == '__main__':
             fp.write(str(chapter))
             sendmessage(user99, "小说已经更新，正在发送最新章节链接\n"+lasturl)
         else:
-            lasturl = ''
-
-
+            lasturl = None
