@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from sendMessage import sendmessage
 
-user = 'oet2l6C-GgjRquvA1vQapoL9i4gc'  # 我的id
+user = 'oet2l6OAuvGUIoaBLFGsiA4uqLfI'  # 我的id
 headers = {
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36"
     }  # 假装通过计算机使用浏览器访问

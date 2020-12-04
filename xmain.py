@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 # define userid
 user99 = 'oet2l6C-GgjRquvA1vQapoL9i4gc'  # 我id
+user98 = 'oet2l6OAuvGUIoaBLFGsiA4uqLfI'
 headers = {
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36"
     }
