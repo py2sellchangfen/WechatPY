@@ -20,8 +20,9 @@ if __name__ == '__main__':
     # head > meta: nth - child(16)
     # body > div.cover > div.block > div.block_txt2 > p: nth - child(8) > a
     chapter = int(chapter[0].replace('第','').replace('章',''))
+    url =[]
     url = soup.find_all('a')
-    turl = soup.find('a',)
+    turl = soup.find_all('a')[13]['href']
     print(url)
 
     # with open(propath+"/log/xiaoshuo.txt", "r+") as fp:
