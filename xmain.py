@@ -15,21 +15,25 @@ if __name__ == '__main__':
     res.encoding = 'utf-8'
     page_text = res.text
     soup = BeautifulSoup(page_text, 'lxml')
-    chapter = soup.find(attrs={"property": "og:novel:latest_chapter_name"})['content']
-    chapter = int(chapter[1:5:1])
-    # time = soup.find(attrs={"property": "og:novel:update_time"})['content']
-    # lasturl = soup.find(attrs={"property": "og:novel:latest_chapter_url"})['content']
-    with open(propath+"/log/xiaoshuo.txt", "r+") as fp:
-        prechapter = int(fp.read())
-        lasturl = ''
-        if chapter > prechapter:
-            t = soup.find_all('li')
-            for i in range(len(t)):
-                if str(prechapter + 1) in t[i].text:
-                    lasturl = 'http://m.78zw.com{}'.format(t[i].a['href'])
-                    break
-            fp.seek(0)
-            fp.write(str(chapter))
-            sendmessage(user99, "小说已经更新，正在发送最新章节链接\n"+lasturl)
+    # chapter = soup.find(attrs={"property": "og:novel:latest_chapter_name"})['content']
+    chapter = soup.select('body > div.cover > div.block > div.block_txt2 > p > a')[2].contents
+    # head > meta: nth - child(16)
+    # body > div.cover > div.block > div.block_txt2 > p: nth - child(8) > a
+    chapter = int(chapter[0].replace('第','').replace('章',''))
+    url = soup.find_all('a')
+    turl = soup.find('a',)
+    print(url)
 
+    # with open(propath+"/log/xiaoshuo.txt", "r+") as fp:
+    #     prechapter = int(fp.read())
+    #     if chapter >= prechapter:
+    #         url = soup.find_all('a',text='第2399章')[0]['href']
+    #         lasturl = 'http://m.78zw.com{}'.format(url)
+    #         print(lasturl)
+    #         fp.seek(0)
+    #         fp.write(str(chapter))
+    #         sendmessage(user99, "小说已经更新，正在发送最新章节链接\n"+lasturl)
+    #     else:
+    #         lasturl = ''
+    #
 
